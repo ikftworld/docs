@@ -1,0 +1,156 @@
+openapi: 3.0.3
+info:
+  title: Tenant Management API
+  version: 1.0.0
+  description: OpenAPI specification generated from Prisma schema
+
+paths:
+  /tenants:
+    get:
+      summary: List all tenants
+      responses:
+        '200':
+          description: List of tenants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tenant'
+    post:
+      summary: Create a new tenant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tenant'
+      responses:
+        '201':
+          description: Tenant created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+
+  /tenants/{id}:
+    get:
+      summary: Get tenant by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Tenant details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+
+  /customers:
+    get:
+      summary: List all customers
+      responses:
+        '200':
+          description: List of customers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+    post:
+      summary: Create a new customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          description: Customer created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+
+  /customers/{id}:
+    get:
+      summary: Get customer by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Customer details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+
+components:
+  schemas:
+    Tenant:
+      type: object
+      properties:
+        id:
+          type: integer
+        dbUser:
+          type: string
+        dbPassword:
+          type: string
+        name:
+          type: string
+          description: Used as the database name
+        owner:
+          $ref: '#/components/schemas/Customer'
+        ownerId:
+          type: integer
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    Customer:
+      type: object
+      properties:
+        id:
+          type: integer
+        companyName:
+          type: string
+        ownerName:
+          type: string
+        email:
+          type: string
+          format: email
+        hostname:
+          type: string
+        accountType:
+          $ref: '#/components/schemas/accountType'
+        tenants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tenant'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    accountType:
+      type: string
+      enum:
+        - FREE
+        - PAID
+

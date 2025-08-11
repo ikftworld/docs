@@ -1,0 +1,12 @@
+[
+  {
+    "type": "file",
+    "input": "./apis/ledger.yaml",
+    "path": "/docs/ledger"
+  },
+  {
+    "type": "file",
+    "input": "./apis/tenant.yaml",
+    "path": "/docs/tenant"
+  }
+]

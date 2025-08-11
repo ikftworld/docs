@@ -3,8 +3,9 @@
     "target": "ES2022",
     "lib": ["ESNext", "DOM", "DOM.Iterable", "WebWorker"],
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "resolveJsonModule": true,
@@ -12,5 +13,5 @@
     "useUnknownInCatchVariables": false,
     "jsx": "react-jsx"
   },
-  "include": ["src", "zudoku.config.tsx"]
+  "include": ["src", "zudoku.config.ts"]
 }

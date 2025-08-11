@@ -1,17 +1,18 @@
 import type { ZudokuConfig } from "zudoku";
+import apis from "./apis/_apis.json";
 
 const config: ZudokuConfig = {
   site: {
     logo: {
-      src: { light: "/logo-light.svg", dark: "/logo-dark.svg" },
-      alt: "Zudoku",
-      width: "130px",
+      src: { light: "/ikft.png", dark: "/ikft.png" },
+      alt: "IKFT",
+      width: "40px",
     },
   },
   navigation: [
     {
       type: "category",
-      label: "Documentation",
+      label: "Getting Started",
       items: [
         {
           type: "category",
@@ -19,48 +20,56 @@ const config: ZudokuConfig = {
           icon: "sparkles",
           items: [
             "/introduction",
-            {
-              type: "link",
-              icon: "folder-cog",
-              badge: {
-                label: "New",
-                color: "purple",
-              },
-              label: "API Reference",
-              to: "/api",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Useful Links",
-          collapsible: false,
-          icon: "link",
-          items: [
-            {
-              type: "link",
-              icon: "book",
-              label: "Zudoku Docs",
-              to: "https://zudoku.dev/docs/",
-            },
           ],
         },
       ],
     },
     {
-      type: "link",
-      to: "/api",
+      type: "category",
       label: "API Reference",
+      collapsible: false,
+      icon: "link",
+      items: [
+        "docs/introduction",
+        {
+          type: "link",
+          icon: "folder-cog",
+          badge: {
+            label: "New",
+            color: "purple",
+          },
+          label: "Tenant API",
+          to: "/docs/tenant",
+        },
+        {
+          type: "link",
+          icon: "folder-cog",
+          badge: {
+            label: "New",
+            color: "purple",
+          },
+          label: "Ledger API",
+          to: "/docs/ledger",
+        },
+        {
+          type: "link",
+          icon: "book",
+          label: "IKFT Website",
+          to: "https://ikft.world",
+        },
+      ],
     },
   ],
   redirects: [{ from: "/", to: "/introduction" }],
-  apis: [
-    {
-      type: "file",
-      input: "./apis/openapi.yaml",
-      path: "/api",
+  apis: apis as ZudokuConfig["apis"],
+  defaults: {
+    apis: {
+      examplesLanguage: "shell", // Default language for code examples
+      disablePlayground: true, // Disable the interactive API playground
+      showVersionSelect: "if-available", // Control version selector visibility
+      expandAllTags: false, // Control initial expanded state of tag categories
     },
-  ],
+  },
 };
 
 export default config;
