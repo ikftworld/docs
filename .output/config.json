@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "framework": {
+    "version": "0.60.0"
+  },
+  "routes": [
+    {
+      "src": "/docs/ledger",
+      "dest": "/docs/ledger/~endpoints",
+      "status": 301,
+      "headers": {
+        "Location": "/docs/ledger/~endpoints"
+      }
+    },
+    {
+      "src": "/docs/ledger",
+      "dest": "/docs/ledger/~endpoints",
+      "status": 301,
+      "headers": {
+        "Location": "/docs/ledger/~endpoints"
+      }
+    },
+    {
+      "src": "/docs/tenant",
+      "dest": "/docs/tenant/~endpoints",
+      "status": 301,
+      "headers": {
+        "Location": "/docs/tenant/~endpoints"
+      }
+    },
+    {
+      "src": "/docs/tenant",
+      "dest": "/docs/tenant/~endpoints",
+      "status": 301,
+      "headers": {
+        "Location": "/docs/tenant/~endpoints"
+      }
+    },
+    {
+      "src": "/",
+      "dest": "/introduction",
+      "status": 301,
+      "headers": {
+        "Location": "/introduction"
+      }
+    }
+  ]
+}
