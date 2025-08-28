@@ -1,0 +1,4 @@
+import{u as i,j as t}from"./entry.client-jnOwjfOq.js";const s="You made the right choice by choosing to use IKFT to power you digital bank!",r=[{depth:2,value:"Getting started",id:"getting-started"}],c={title:"Welcome to IKFT",lastModifiedTime:"2025-08-28T14:33:59.605Z"},d="pages/introduction.mdx";function o(n){const e={a:"a",h2:"h2",p:"p",...i(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsxs(e.p,{children:["You made the right choice by choosing to use ",t.jsx(e.a,{href:"https://ikft.world",children:"IKFT"})," to power you digital bank!"]}),`
+`,t.jsx(e.h2,{id:"getting-started",children:"Getting started"}),`
+`,t.jsx(e.p,{children:"Head on to the documentation page and start building your bank!"})]})}function h(n={}){const{wrapper:e}={...i(),...n.components};return e?t.jsx(e,{...n,children:t.jsx(o,{...n})}):o(n)}export{d as __filepath,h as default,s as excerpt,c as frontmatter,r as tableOfContents};
+//# sourceMappingURL=introduction-DPlXk1LH.js.map
