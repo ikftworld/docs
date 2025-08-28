@@ -1,29 +1,7 @@
-import type { ZudokuConfig, ZudokuPlugin } from "zudoku";
-import apis from "./apis/_apis.json";
-
-const GoogleAnalyticsPluginI: ZudokuPlugin = {
-    getHead: () => {
-    return (
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBNN44Q8NV"></script>
-    );
-  },
-}
-const GoogleAnalyticsPluginII: ZudokuPlugin = {
-    getHead: () => {
-    return (
-      <script>
-        {`
-          <!-- Google tag (gtag.js) -->
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-GBNN44Q8NV');
-        `}
-      </script>
-    );
-  },
-}
+import type { ZudokuConfig } from "zudoku";
+import GoogleAnalyticsPlugin from "./plugins/googleAnalytics";
+import FaviconPlugin from "./plugins/favicon";
+import apis from "./apis/apis";
 
 const config: ZudokuConfig = {
   site: {
@@ -58,7 +36,18 @@ const config: ZudokuConfig = {
       type: "category",
       label: "Getting Started",
       items: [
-        { type: "link", label: "Introduction", to: "/intro" },
+        {
+          type: "link",
+          label: "Introduction",
+          to: "/intro",
+          icon: "circle-play"
+        },
+        {
+          type: "link",
+          label: "API Catalog",
+          to: "/api-catalog",
+          icon: "book"
+        },
       ],
     },
     {
@@ -75,6 +64,11 @@ const config: ZudokuConfig = {
     }
   ],
   redirects: [{ from: "/", to: "/intro" }],
+  catalogs: {
+    path: "/api-catalog",
+    label: "API Catalog",
+    // items: ["api-operational"],
+  },
   apis: apis as ZudokuConfig["apis"],
   defaults: {
     apis: {
@@ -84,7 +78,7 @@ const config: ZudokuConfig = {
       expandAllTags: false, // Control initial expanded state of tag categories
     },
   },
-  plugins: [GoogleAnalyticsPluginI, GoogleAnalyticsPluginII],
+  plugins: [...GoogleAnalyticsPlugin, FaviconPlugin],
 };
 
 export default config;

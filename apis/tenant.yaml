@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Tenant Management API
   version: 1.0.0
-  description: OpenAPI specification generated from Prisma schema
+  description: IKFT - Tenant Management API Documentation
 
 paths:
   /tenants:
