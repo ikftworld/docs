@@ -1,5 +1,22 @@
-import type { ZudokuConfig } from "zudoku";
+import type { ZudokuConfig, ZudokuPlugin } from "zudoku";
 import apis from "./apis/_apis.json";
+
+const GoogleAnalyticsPlugin: ZudokuPlugin = {
+    getHead: () => {
+    return (
+      <script>
+        {`
+          <!-- Google tag (gtag.js) -->
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-GBNN44Q8NV');
+        `}
+      </script>
+    );
+  },
+      }
 
 const config: ZudokuConfig = {
   site: {
@@ -60,6 +77,7 @@ const config: ZudokuConfig = {
       expandAllTags: false, // Control initial expanded state of tag categories
     },
   },
+  plugins: [GoogleAnalyticsPlugin],
 };
 
 export default config;
