@@ -16,7 +16,6 @@ const config: ZudokuConfig = {
           links: [
             { label: "Features", href: "/intro" },
             { label: "Pricing", href: "/pricing" },
-            { label: "Documentation", href: "/docs/introduction" },
             { label: "GitHub", href: "https://github.com/ikftworld" }, // Auto-detected as external
           ],
         },
