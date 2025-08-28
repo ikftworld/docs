@@ -5,19 +5,19 @@
   },
   "routes": [
     {
-      "src": "/docs/ledger",
-      "dest": "/docs/ledger/~endpoints",
+      "src": "/docs/customer",
+      "dest": "/docs/customer/~endpoints",
       "status": 301,
       "headers": {
-        "Location": "/docs/ledger/~endpoints"
+        "Location": "/docs/customer/~endpoints"
       }
     },
     {
-      "src": "/docs/ledger",
-      "dest": "/docs/ledger/~endpoints",
+      "src": "/docs/customer",
+      "dest": "/docs/customer/~endpoints",
       "status": 301,
       "headers": {
-        "Location": "/docs/ledger/~endpoints"
+        "Location": "/docs/customer/~endpoints"
       }
     },
     {
@@ -38,10 +38,10 @@
     },
     {
       "src": "/",
-      "dest": "/introduction",
+      "dest": "/intro",
       "status": 301,
       "headers": {
-        "Location": "/introduction"
+        "Location": "/intro"
       }
     }
   ]
