@@ -5,22 +5,6 @@
   },
   "routes": [
     {
-      "src": "/docs/customer",
-      "dest": "/docs/customer/~endpoints",
-      "status": 301,
-      "headers": {
-        "Location": "/docs/customer/~endpoints"
-      }
-    },
-    {
-      "src": "/docs/customer",
-      "dest": "/docs/customer/~endpoints",
-      "status": 301,
-      "headers": {
-        "Location": "/docs/customer/~endpoints"
-      }
-    },
-    {
       "src": "/docs/tenant",
       "dest": "/docs/tenant/~endpoints",
       "status": 301,
@@ -34,6 +18,22 @@
       "status": 301,
       "headers": {
         "Location": "/docs/tenant/~endpoints"
+      }
+    },
+    {
+      "src": "/docs/customer",
+      "dest": "/docs/customer/~endpoints",
+      "status": 301,
+      "headers": {
+        "Location": "/docs/customer/~endpoints"
+      }
+    },
+    {
+      "src": "/docs/customer",
+      "dest": "/docs/customer/~endpoints",
+      "status": 301,
+      "headers": {
+        "Location": "/docs/customer/~endpoints"
       }
     },
     {
