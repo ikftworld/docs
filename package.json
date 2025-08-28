@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "zudoku dev",
+    "start": "npm run dev",
     "build": "zudoku build",
     "preview": "zudoku preview",
     "lint": "eslint"

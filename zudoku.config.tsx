@@ -8,59 +8,50 @@ const config: ZudokuConfig = {
       alt: "IKFT",
       width: "40px",
     },
+    footer: {
+      columns: [
+        {
+          title: "Product",
+          position: "center",
+          links: [
+            { label: "Features", href: "/intro" },
+            { label: "Pricing", href: "/pricing" },
+            { label: "Documentation", href: "/docs/introduction" },
+            { label: "GitHub", href: "https://github.com/ikftworld" }, // Auto-detected as external
+          ],
+        },
+        {
+          title: "Company",
+          links: [
+            { label: "About", href: "https://ikft.world" },
+            { label: "Investors", href: "https://ikft.world/#/investors" },
+          ],
+        },
+      ],
+    },
   },
   navigation: [
     {
       type: "category",
       label: "Getting Started",
       items: [
-        {
-          type: "category",
-          label: "Getting Started",
-          icon: "sparkles",
-          items: [
-            "/introduction",
-          ],
-        },
+        { type: "link", label: "Introduction", to: "/intro" },
       ],
     },
     {
-      type: "category",
-      label: "API Reference",
-      collapsible: false,
+      type: "link",
+      label: "Tenant API",
       icon: "link",
-      items: [
-        "docs/introduction",
-        {
-          type: "link",
-          icon: "folder-cog",
-          badge: {
-            label: "New",
-            color: "purple",
-          },
-          label: "Tenant API",
-          to: "/docs/tenant",
-        },
-        {
-          type: "link",
-          icon: "folder-cog",
-          badge: {
-            label: "New",
-            color: "purple",
-          },
-          label: "Ledger API",
-          to: "/docs/ledger",
-        },
-        {
-          type: "link",
-          icon: "book",
-          label: "IKFT Website",
-          to: "https://ikft.world",
-        },
-      ],
+      to: "/docs/tenant"
     },
+    {
+      type: "link",
+      label: "Customer APIs",
+      icon: "link",
+      to: "/docs/customer"
+    }
   ],
-  redirects: [{ from: "/", to: "/introduction" }],
+  redirects: [{ from: "/", to: "/intro" }],
   apis: apis as ZudokuConfig["apis"],
   defaults: {
     apis: {

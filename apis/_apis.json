@@ -1,8 +1,8 @@
 [
   {
     "type": "file",
-    "input": "./apis/ledger.yaml",
-    "path": "/docs/ledger"
+    "input": "./apis/customer.yaml",
+    "path": "/docs/customer"
   },
   {
     "type": "file",
