@@ -1,5 +1,6 @@
 import type { ZudokuConfig } from "zudoku";
 import GoogleAnalyticsPlugin from "./plugins/googleAnalytics";
+import YandexMetricaPlugin from "./plugins/yandexMetrica";
 import FaviconPlugin from "./plugins/favicon";
 import apis from "./apis/apis";
 
@@ -78,7 +79,7 @@ const config: ZudokuConfig = {
       expandAllTags: false, // Control initial expanded state of tag categories
     },
   },
-  plugins: [...GoogleAnalyticsPlugin, FaviconPlugin],
+  plugins: [...GoogleAnalyticsPlugin, FaviconPlugin, YandexMetricaPlugin],
 };
 
 export default config;
